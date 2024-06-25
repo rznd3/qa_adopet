@@ -7,10 +7,10 @@ Cypress.Commands.add('acessarPaginaCadastro', () => {
 })
 
 Cypress.Commands.add('preencherCadastro', (name='', email='', password='', confirmPassword='') => {
-    if (name) cy.get(cadastroLocators.inputName).type(name)
-    if (email) cy.get(cadastroLocators.inputEmail).type(email)
-    if (password) cy.get(cadastroLocators.inputPassword).type(password)
-    if (confirmPassword) cy.get(cadastroLocators.inputConfirmPassword).type(confirmPassword)
+    if (name) cy.get(cadastroLocators.inputName).clear().type(name)
+    if (email) cy.get(cadastroLocators.inputEmail).clear().type(email)
+    if (password) cy.get(cadastroLocators.inputPassword).clear().type(password)
+    if (confirmPassword) cy.get(cadastroLocators.inputConfirmPassword).clear().type(confirmPassword)
     cy.get(cadastroLocators.buttonSubmit).click()
 })
 

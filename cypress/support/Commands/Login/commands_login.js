@@ -1,12 +1,15 @@
+import LoginLocators from '../../Locators/locators_login'
+const loginLocators = new LoginLocators
+
 Cypress.Commands.add('logon', (email, password) => {
-    cy.get('[data-test="input-loginEmail"]').type(email)
-    cy.get('[data-test="input-loginPassword"]').type(password)
-    cy.get('[data-test="submit-button"]').click()
+    cy.get(loginLocators.inputEmail).type(email)
+    cy.get(loginLocators.inputPassword).type(password)
+    cy.get(loginLocators.buttonSubmit).click()
 })
 
 Cypress.Commands.add('acessarPaginaLogin', () => {
     cy.visit('https://adopet-frontend-cypress.vercel.app/')
-    cy.get('[data-test="login-button"]').click()
+    cy.get(loginLocators.buttonLogin).click()
 })
 
 
